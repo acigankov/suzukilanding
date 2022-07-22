@@ -29,19 +29,34 @@
             <img src="img/bike.png" alt="bike" class="bike">
         </div>
         <!-- /.content -->
+
+        <div class="slider">
+            <div class="slides active">
+                <h2><span>Endgine</span><br>599 cc</h2>
+                <h2><span>Max Speed</span><br>260 Kmph</h2>
+            </div>
+            <div class="slides">
+                <h2><span>Mileage</span><br>14 Kmpl</h2>
+                <h2><span>0-100</span><br>4 Seconds</h2>
+            </div>
+            <div class="slides">
+                <h2><span>Wheels</span><br>17-Inch Alloy</h2>
+                <h2><span>Tyre Type</span><br>Tubeless</h2>
+            </div>
+        </div>
+        <!-- /.slider -->
+
         <div class="footer">
             <ul class="sci">
                 <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
                 <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
                 <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
             </ul>
-            <!-- /.sci-->
             <div class="dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
-            <!-- /.dots -->
         </div>
         <!-- /.footer -->
     </section>
@@ -49,5 +64,25 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const slides = document.querySelectorAll('.slides');
+        const dots = document.querySelectorAll('.dot');
+
+        function setActive(i) {
+            for(slide of slides)
+            slide.classList.remove('active');
+            slides[i].classList.add('active');
+            for(dot of dots)
+            dot.classList.remove('active');
+            dots[i].classList.add('active');
+        }
+
+        for(let j = 0; j < dots.length; j++) {
+            dots[j].addEventListener('click', function(){
+                setActive(j)
+            })
+        }
+
+    </script>
 </body>
 </html>
