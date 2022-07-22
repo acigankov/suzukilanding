@@ -108,7 +108,7 @@ header {
 }
 
 .bike {
-    width: 80%;
+    max-width: 80%;
 }
 
 .footer {
@@ -150,8 +150,12 @@ header {
     background-color:rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     cursor: pointer;
-    margin-left: 10px;
 }
+
+.dots .dot:not(:last-child) {
+    margin-right: 10px;
+}
+
 
 .dots .dot.active {
     background-color: var(--white);
@@ -181,6 +185,7 @@ header {
     color: var(--white);
     font-size: 3em;
 }
+
 .slider .slides h2:last-child {
     text-align: end;
 }
@@ -203,7 +208,115 @@ header {
         padding: 20px 40px;
     }
 
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 180px;
+    }
+
+    .slider .slides {
+        position: absolute;
+        top: 50%;
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .slider .slides h2 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .slider .slides h2:last-child {
+        text-align: center;
+    }
+
+    .bike {
+        max-width: 100%;
+    }
+    
     .footer {
-        padding: 20px 40px;
+        padding: 0 40px;
+        position: relative;
+        margin-top: 50px;
+        flex-direction: column-reverse;
+    }
+
+    .sci {
+        margin-top: 40px;
+    }
+
+    .content h2 {
+        font-size: 3em;
+    }
+
+    .toggle {
+        position: relative;
+        width: 32px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .toggle.active {
+        position: fixed;
+        top: 40px;
+        right: 40px;
+    }
+
+    .toggle::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white);
+        transform: translateY(-10px);
+        transition: 0.25s;
+        box-shadow: 0 10px var(--white);
+    }
+
+    .toggle.active::before {
+        transform: translateY(0) rotate(45deg);
+        box-shadow: none;
+    }
+
+    .toggle::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--white);
+        transform: translateY(10px);
+        transition: 0.25s;
+    }
+
+    .toggle.active::after {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 999;
+        background-color: var(--black);
+    }
+
+    .navigation li a {
+        font-size: 1.5em;
+        margin: 10px 0;
+        display: inline-block;
     }
 }
