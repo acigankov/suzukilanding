@@ -90,3 +90,19 @@ header {
 .content h2 span {
     font-weight: 700;
 }
+
+.btn {
+    display: inline-block;
+    background-color: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 36px;
+    margin-top: 20px;
+    border-radius: 50px;
+    font-size: 1.25em;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    letter-spacing: 4px;
+}
