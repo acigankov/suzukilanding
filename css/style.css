@@ -201,7 +201,7 @@ header {
 @media screen and (max-width: 991px) {
     
     .main {
-        paddding: 40px;
+        padding: 40px;
     }
 
     header {
@@ -318,5 +318,42 @@ header {
         font-size: 1.5em;
         margin: 10px 0;
         display: inline-block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main {
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .main::before {
+        display: none;
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 90px;
+    }
+
+    .content {
+        margin-top: 150px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 12px 32px;
+        margin-bottom: 36px;
+    }
+
+    .slider .slides h2 {
+        font-size: 2em;
+    }
+
+    .footer {
+        margin-top: 20px;
     }
 }
